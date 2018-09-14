@@ -1,0 +1,26 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="increase(2, $event)">Click Me</button>
+    <button v-on:click="counter++">Click Me</button>
+    <p>{{ counter }}</p>
+    <p>{{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
+    <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" v-on:keyup.enter.space="alertMe">
+
+
+    <!-- Reacting to changes with Computed Properties  -->
+    <button v-on:click="reactCounter++">Increase</button>
+    <button v-on:click="reactCounter--">Decrease</button>
+
+    <p>Counter {{ reactCounter  }}</p>
+    <p>Result {{ result() }} | {{ output }}</p>
+
+
+</div>
+
+<script src="src/events.js"></script>
