@@ -1,0 +1,18 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-if="show">You can see me! <span>Hello!</span> </p>
+    <div v-else-if="show === 'something'">
+        :D
+    </div>    
+    <template v-if="show">
+        <h1>Heading</h1>
+        <p>Inside a template</p>
+    </template>
+    <p v-else>Do you also see me?</p>
+    <p v-show="show">Dom Element hidden</p>
+    <button @click="show = !show">Switch</button>
+</div>
+
+<script src="src/conditional-rendering.js"></script>
